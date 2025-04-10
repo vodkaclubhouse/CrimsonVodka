@@ -1,0 +1,48 @@
+CREATE TABLE IF NOT EXISTS `nl_admin` (
+  `userid` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  UNIQUE KEY `userid` (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nl_confirm`
+--
+
+CREATE TABLE IF NOT EXISTS `nl_confirm` (
+  `confirm_id` int(5) NOT NULL AUTO_INCREMENT,
+  `email_id` int(4) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `word` varchar(32) NOT NULL,
+  `dtt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` varchar(1) NOT NULL,
+  PRIMARY KEY (`confirm_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nl_email`
+--
+
+CREATE TABLE IF NOT EXISTS `nl_email` (
+  `email_id` int(5) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `status` varchar(1) NOT NULL,
+  PRIMARY KEY (`email_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nl_post`
+--
+
+CREATE TABLE IF NOT EXISTS `nl_post` (
+  `post_id` int(4) NOT NULL AUTO_INCREMENT,
+  `sub` varchar(200) NOT NULL,
+  `post` text NOT NULL,
+  `dt` date NOT NULL,
+  PRIMARY KEY (`post_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
