@@ -1,0 +1,10 @@
+[build]
+  functions = 'functions'
+
+[dev]
+  framework = "vite"
+  
+[build.environment]
+  CAL_API = "AIzaSyCqksm5HJ1SLzPG4MgzKiLyiQlUS3PzEgw"
+  # Replace with your personal Calendar ID after sharing your calendar
+  CAL_ID = "YOUR_CALENDAR_ID_HERE"
